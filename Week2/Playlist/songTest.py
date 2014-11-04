@@ -17,8 +17,11 @@ class songTest(unittest.TestCase):
 
     def test_rate_function(self):
         self.song.rate(4)
-        self.AssertTrue(self.song.rating, 4)
+        self.assertTrue(self.song.rating, 4)
 
     def test_rate_function_over(self):
         self.song.rate(6)
-        self.AssertTrue(self.song.rating, "Rating must be between 1 and 5")
+        self.assertTrue(self.song.rating, "The rating must be between 1 and 5")
+
+if __name__ == '__main__':
+    unittest.main()

@@ -17,4 +17,4 @@ class Song:
             self.rating = rating
         else:
             error_message = "The rating must be between {} and {}"
-            raise(error_message.format(self.MIN_RATING, self.MAX_RATING))
+            return error_message
