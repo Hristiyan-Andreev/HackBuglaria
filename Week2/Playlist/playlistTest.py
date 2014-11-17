@@ -11,7 +11,7 @@ class TestPlaylist(unittest.TestCase):
 
     def test_addsong(self):
         song1 = Song("Punta", "Upsurt", "Pop Folk", 5, 3.45, 192)
-        #song2 = Song("Kuchko Kosmata", "Upsurt", "Pop Folk", 5, 3.20, 200)
+        #song2 = Song("Still waiting", "Sum 41", "Qkoruda", 5, 3.20, 200)
         playlist1 = Playlist()
         playlist1.add_song(song1)
         self.assertTrue(playlist1.playlist[0].title, "Punta")
@@ -20,6 +20,12 @@ class TestPlaylist(unittest.TestCase):
         self.assertTrue(playlist1.playlist[0].rating, 1)
         self.assertTrue(playlist1.playlist[0].length, 3.45)
         self.assertTrue(playlist1.playlist[0].bitrate, 192)
+
+    def test_removeSong(self):
+        song1 = Song("Punta", "Upsurt", "Pop Folk", 5, 3.45, 192)
+        playlist1 = Playlist()
+        playlist1.add_song(song1)
+        playlist1.remove_song("Punta")
 
 
 if __name__ == '__main__':
