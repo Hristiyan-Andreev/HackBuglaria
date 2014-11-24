@@ -20,6 +20,7 @@ def main_menu():
 
         elif command == 'login':
             username = input("Enter your username: ")
+            failtime = sql_manager.getfailtime(username)
             password = getpass.getpass("Enter your password: ")
             #password = input("Enter your password: ")
             #bytepass = ' '.join(format(x, 'b') for x in bytearray(password))
@@ -34,6 +35,7 @@ def main_menu():
                     failuser = username
                     now = datetime.datetime.now()
                     failmin = now.minute
+                    sql_manager.setfailtime(failuser, failmin)
                 print("Login failed")
 
         elif command == 'help':

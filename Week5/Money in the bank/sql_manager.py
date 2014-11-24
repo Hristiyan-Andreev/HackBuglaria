@@ -51,7 +51,7 @@ def setfailtime(username, time):
     conn.commit()
 
 
-def getfailtime(username, time):
+def getfailtime(username):
     conn.row_factory = sqlite3.Row
     cursor.execute("SELECT failtime FROM clients WHERE username = ?", (username,))
     user = cursor.fetchone
