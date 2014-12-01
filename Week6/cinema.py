@@ -36,8 +36,6 @@ class Cinema:
         self.show_projections(projection_id)
 
 
-
-
 def main():
     engine = create_engine("sqlite:///cinema.db")
     Base.metadata.create_all(engine)
